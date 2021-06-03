@@ -1,6 +1,7 @@
 import React from 'react'
-import { Button, Label, Input, Form } from './styled-components'
-import useForm from '../custom-hooks/use-form'
+import { Button, Label, Input, Form } from '../styled-components'
+import useForm from '../../custom-hooks/use-form'
+import validate from './validation-rules'
 
 const PaymentForm = (props) => {
     const onFormSubmit = () => console.log(values)

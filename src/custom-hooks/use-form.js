@@ -2,6 +2,7 @@ import {useState} from 'react'
 
 const useForm = (defaultValues, onSubmit) => {
     const [values, setValues] = useState(defaultValues)
+    const [errors, setErrors] = useState({})
     const handleChange = (event) => {
         setValues( values => {
             return {
