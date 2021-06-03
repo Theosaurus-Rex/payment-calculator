@@ -1,6 +1,6 @@
 import {useState} from 'react'
 
-const useForm = (defaultValues) => {
+const useForm = (defaultValues, onSubmit) => {
     const [values, setValues] = useState(defaultValues)
     const handleChange = (event) => {
         setValues( values => {
@@ -12,7 +12,12 @@ const useForm = (defaultValues) => {
         })
     }
 
-    return [values, handleChange]
+    const handleSubmit = (event) => {
+        event?.preventDefault();
+        onSubmit();
+    }   
+
+    return {values, handleChange, handleSubmit}
 }
 
 export default useForm
